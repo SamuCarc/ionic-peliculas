@@ -1,0 +1,71 @@
+
+.poster-detalle-sobre {
+        position: relative;
+        top: -80px;
+        left: -10px;
+        margin-bottom: -75px;
+    }
+
+
+    .titulo {
+        width: 100%;
+        position: absolute;
+        color: white;
+        background-color: red;
+        padding: 5px 5px 50px 5px;
+    
+    
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+        background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    }
+    
+    .titulo h1{
+        position: absolute;
+        top: 15px;
+        left: 7px;
+    }
+    
+    .card-actor {
+        height: 210px;
+        background: #ffffff00;
+    }
+    
+    .actor-name {
+        position: relative;
+        top:15px;
+    }
+    
+    .pelicula-release {
+        position: relative;
+        bottom: -8px;
+        left: 20px;
+        color: #5f5f5f;
+    }
+
+    .poster:hover {
+        opacity:1;
+    }
+
+    ion-item ion-icon {
+        font-size: 21px;
+        margin-right: 15px;
+    }
+
+    ion-item ion-label,
+    ion-item ion-note {
+        font-size:15px;
+    }
+
+    ion-note {
+        padding-left: 3px;
+        margin-left: 0px;
+    }
+
+    @media only screen and (max-width: 550px) {
+        ion-item ion-label {
+            visibility: hidden;
+        }
+    }

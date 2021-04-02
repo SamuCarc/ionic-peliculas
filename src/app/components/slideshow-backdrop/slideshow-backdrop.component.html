@@ -1,0 +1,24 @@
+<ion-slides [options]="slideOpts">
+  <ion-slide *ngFor="let pelicula of peliculas | filtroImagen">
+
+    <ion-card (click)="verDetalle(pelicula.id)">
+      <ion-img [src]="pelicula.backdrop_path | imagen"></ion-img>
+      <div class="title-backdrop">
+        <h3>
+            {{ pelicula.title }}
+        </h3>
+      </div>
+    </ion-card>
+
+  </ion-slide>
+</ion-slides>
+
+<div *ngIf="peliculas.length==0">
+  <ion-slides [options]="slideOpts">
+    <ion-slide *ngFor="let item of [1,1,1,1,1,1,1,1,1,1]">
+      <ion-card>        
+        <ion-skeleton-text animated class="skeleton-backdrop"></ion-skeleton-text>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</div>

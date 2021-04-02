@@ -1,17 +1,39 @@
-<ion-header [translucent]="true">
+<ion-header mode="ios" [translucent]="true" class="ion-no-border">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Favoritos
     </ion-title>
   </ion-toolbar>
+
+
+  <ion-segment scrollable 
+              mode="md"
+              color="primary"
+              (ionChange)="cambioCategoria($event)">
+              
+    <ion-segment-button mode="md" 
+    *ngFor="let pelicula of favoritoGeneroTodos | filtroGeneros"
+    [value]="pelicula.genero">
+      <ion-label text-capitalize>{{ pelicula.genero }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content [fullscreen]="true">
+
+  <ion-slides class="allSize" [options]="sliderOpts"
+  *ngIf="favoritoGenero[0].peliculas.length==0">
+    <ion-slide>
+      <h4>Aún no has añadido ninguna pelicula a favoritos</h4>
+    </ion-slide>
+  </ion-slides>
+  
+  <div *ngIf="favoritoGenero.length>0">
+    <app-posters (detalleCerrado)="onModalDetalleCerrado()"
+                [peliculas]="favoritoGenero[0].peliculas">
+    </app-posters>
+  </div>
+
+
 </ion-content>
